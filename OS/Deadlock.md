@@ -39,15 +39,14 @@
 ## 1-2. Deadlock Avoidance
 
 > 교착 상태 가능성을 배제하지 않고 발생하지 않게 피해나간다.
+>
+> 데드락이 발생하지 않는 safe sequence를 찾는다.
 
 - Bakers Algorithm
+  
   - 프로세스가 자원을 요구할 때 시스템은 자원을 할당한 후에도 안정 상태인지 사전에 검사하여 할당 유무를 결정한다.
-
-
-
-## 2-2. Deadlock Detection
-
-> 교착 상태 발생을 허용하고 발생 시 원인을 규명하여 해결
+  
+    
 
 ### Resource Allocation State
 
@@ -55,15 +54,15 @@
 
  `deadlock`(circular-wait & deadlock)  ⊂  `unsafe` (circular-wait but no deadlock)  |     `safe`(no circular-wait)
 
-- unsafe state면 데드락 가능성이 있는거고 이 unsafe에 안들어가게 하는게 Avoidance다.
+unsafe state면 데드락 가능성이 있는거고 이 unsafe에 안들어가게 하는게 Avoidance다.
 
+## 2-2. Deadlock Detection & Recovery
 
-
-## 2-1. Deadlock Recovery
+> 교착 상태 발생을 허용하고 발생 시 원인을 규명하여 해결
 
 > 교착 상태 발견 후 환형 대기를 배제시키거나 자원을 중단하여 회복한다.
 
-
+- 프로세스 중단, 자원 선점
 
 ## 3. Deadlock Ignore
 
