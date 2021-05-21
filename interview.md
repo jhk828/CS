@@ -1,16 +1,3 @@
-링크 & 출처 
-
-1. https://wooaoe.tistory.com/45?category=822650
-2. https://velog.io/@hygoogi/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0
-3. https://gyoogle.dev/blog/
-4. https://jhnyang.tistory.com/290
-5. https://mangkyu.tistory.com/92?category=761303
-6. https://hyonee.tistory.com/95
-7. https://velog.io/@hygoogi/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0
-8. https://jeong-pro.tistory.com/91
-
-
-
 # 운영체제
 
 1. Process와 Thread의 차이
@@ -287,6 +274,26 @@
 
 # 자료구조
 
+1. `Stack`: 가장 먼저 넣는 자료가 마지막에 나오는 구조 (LIFO)
+   - 웹 브라우저 방문 기록 (뒤로 가기), 후위 표기법 계산, 수식 괄호 검사, 역순 문자열 만들기
+   - 원소를 삽입/삭제 : `O(1)` <- 맨 위 원소에만 접근
+2. `Queue`: 가장 먼저 넣는 자료가 먼저 나오는 구조 (FIFO)
+   - 우선 순위가 같은 작업 예약, 프로세스 관리, 캐시, BFS
+   - 원소를 삽입/삭제 : `O(1)`
+3. 순환 큐와 선형 큐
+   1. 선형 큐:
+      1. `Front`고정, `Back` 이동 하며 데이터 삭제 시, 나머지 데이터를 한 칸 씩 다 옮겨야 한다.
+      2. 둘 다 이동하며 삭제 시: 배열 끝에 저장된 상황에서는 `Back`을 더 이상 이동할 수 없어 overflow 발생
+   2. 순환 큐 (환형 큐) : `front`가 큐의 끝에 닿으면 큐의 맨 앞으로 자료를 보내 원형으로 연결
+4. `Heap`:
+5. `Deque(Double Ended Queue)`: `front`와 `end`에서 모두 삽입 삭제 가능
+   - 연속적 메모리 기반, 임의 접근 반복자 제공 (인덱스로 접근)
+   - 크기 가변적
+   - 원소 맨/앞 뒤 삽입/ 삭제 : `O(1)`
+   - 원소 탐색 : `O(1)` (인덱스로 접근)
+   - 앞과 뒤에서 삽입 삭제가 자주 일어나는 경우, 데이터 개수가 가변적일 경우, 데이터 검색을 거의 하지 않을 경우
+6. Java Collections
+
 1. Array(배열)과 List의 차이점은 무엇인지 설명하시오.
 2. B-Tree
 3. Binary Tree
@@ -335,8 +342,6 @@
       - for Call
       - method call에 대한, 해당 메소드에 대한 스택 공간이 만들어진다. 메소드가 실행되다가 다른 메소드가 호출되면 다른 스택 공간이 생성되고 메소드가 종료되면 해당 스택이 clear 되고 그전까지 수행되던 메소드의 스택으로 가서 실행한다.
 
-      
-
 8. Garbage Collection
 
    - Java는 new 연산자로 Memory Allocation을 수행하지만 Deallocation은 JVM이 알아서 처리한다.
@@ -349,7 +354,7 @@
 
 10. 컴파일 에러와 런타임 에러
 
-# 디자인 패턴 & FrameWork
+# 디자인 패턴 & FrameWork 
 
 1. MVC 모델 1과 MVC 모델 2의 차이점에 대해 설명하시오.
    1. MVC란 SW를 세가지 요소로 쪼개어 디자인 하는 것. Model, View, Controller
@@ -361,7 +366,7 @@
 2. 프레임워크의 특징과 프레임워크와 라이브러리 차이점은 무엇인지 설명하시오. 
 3. Spring AOP가 무엇인지 OOP와 AOP를 비교하여 설명하시오.
 
-# 소프트웨어 공학 & etc
+# 소프트웨어 공학
 
 1. Git이 무엇인지 설명하고 프로젝트에서 깃허브를 사용했다면 어떤 식으로 기여했는지 설명하시오.
 
@@ -374,7 +379,60 @@
 
    
 
+
+
+# etc..
+
+1. RSTM (Recurrent Neural Network) 이란?
+
+   - 순차적으로 동작하는 데이터 처리에 적합한 모델, 직전의 정보/ 단기 기억만 이용
+
+   - 이전 셀의 출력 (Recurerent)과 입력(Input)이 합쳐져 출력(output)이 나온다. <- tanh
+     - (전 셀로부터의 리커런트 정보(기억 정보)를 그대로 흘려보내는 것이 아니라, tanh이 요점을 잘 정리해준다는 느낌)
+
+2. [LSTM (Long Short-Term Memory)이란?](https://doooob.tistory.com/162)
+
+   RNN보다 장기 의존(long-term dependencies) 학습 가능 
+
+   - 입력 게이트 : 현재 정보 기억하기 위한 게이트
+   - 삭제 게이트 : 기억을 삭제하기 위한 게이트
+   - 출력 게이트 : 출력을 위한 게이트
+   - 이전 셀의 출력이 단기 기억과 장기 기억으로 나누어져 있고, 정보가 폭발되지 않도록 정보는 망각 게이트에서 삭제하여 불필요한 정보로 잘못된 가중치 갱신을 하지 않도록 입력, 출력 게이트에서 취사선택한다.
+   - tanh에 의해 정보를 이용하기 쉬운 형태로 변환한다.
+   -  LSTM에서 필요로 하는 3차원 데이터 
+     - `(size, timestamps, input_dim)`
+     - `size`: 데이터 개수
+     - `timestamps`: 프레임 길이
+     - `input_dim` :한 프레임 당 데이터 개수
+
+3. One-Hot Encoding이란
+
+   - 문자를 숫자로 바꾸는 기법, 표현하고 싶은 단어 인덱스는 1, 다른 인덱스를 0으로 부여한다.
+
+4. Tensorflow Lite란?
+
+   - Tensorflow 모델을 모바일, IoT 기기에서 사용할 수 있도록 경량화 시킨 버전
+
    
+
+
+
+
+
+----
+
+출처 
+
+1. https://wooaoe.tistory.com/45?category=822650
+2. https://velog.io/@hygoogi/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0
+3. https://gyoogle.dev/blog/
+4. https://jhnyang.tistory.com/290
+5. https://mangkyu.tistory.com/92?category=761303
+6. https://hyonee.tistory.com/95
+7. https://velog.io/@hygoogi/%EA%B8%B0%EC%88%A0%EB%A9%B4%EC%A0%91-%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0
+8. https://jeong-pro.tistory.com/91
+9. https://doooob.tistory.com/162
+10. https://velog.io/@choiiis/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue
 
 
 
