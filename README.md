@@ -489,13 +489,20 @@
 10. 모듈이란
 
 11. Spring MVC 구조 처리 과정
-    1. DispatcherServlet : 어플리케이션으로 들어오는 모든 Request를 받아서 처리할 수 있도록 Controller에 전달하고 결과값을 View에게 전달한다.
-    2. HandlerMapping : Request URL이 각각 어떤 Controller로 처리될 것인지 찾아준다.
-    3. ModelAndView : Controller 처리 결과와 결과를 보여줄 View에 관한 정보를 담고있는 객체이다.
-    4. ViewResolver : View 관련 정보를 갖고 실제 View를 찾아준다.
-    5. View : Controller가 처리한 결과값을 보여줄 View를 생성한다.
+    1. `DispatcherServlet` : 어플리케이션으로 들어오는 모든 Request를 받아서 처리할 수 있도록 Controller에 전달하고 결과값을 View에게 전달한다.
+    2. `HandlerMapping` : Request URL이 각각 어떤 Controller로 처리될 것인지 찾아준다.
+    3. `ModelAndView` : Controller 처리 결과와 결과를 보여줄 View에 관한 정보를 담고있는 객체이다.
+    4. `ViewResolver` : View 관련 정보를 갖고 실제 View를 찾아준다.
+    5. `View` : Controller가 처리한 결과값을 보여줄 View를 생성한다.
 
 12. Android 생명 주기
+
+    1. 최초로 앱을 실행하면 `onCretae()`가 호출된다.
+    2. `onStart()`가 호출되면서 사용자가 액티비티를 볼 수 있다.
+    3. 액티비티가 사용자와 상호작용이 가능한 포그라운드에 위치하면 `onResume()`
+    4. 실행 중이던 액티비티가 포커스를 잃어 사용자와 상호작용이 불가능해지면 `onPause()` 호출
+    5. 액티비티가 더 이상 보이지 않으면 `onStop()`
+    6. 액티비티 종료 혹은 앱 프로세스 종료 `onDestroy()`
 
 13. Android Background / Foreground
 
