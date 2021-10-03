@@ -72,9 +72,16 @@
 ### ◼ TCP/IP
 
 응용, 전송, 인터넷, 네트워크 접속 계층
-
 - `OSI7`는 **역할 기반**으로, 통신 전반에 대한 표준
 - `TCP/IP`는 **프로토콜 기반**으로, 데이터 전송 기술 특화
+
+<br>
+
+### ◼ OSI 7 Lauer vs TCP/IP Protocol Suite
+1. TCP/IP가 먼저 개발되고, 인터넷 개발 이후 계속 표준화된 반면 OSI 7는 표준이 되기는 하지만 실제로 잘 구현되지는 않는다.
+2. OSI 7은 장비, 통신을 어떻게 표준으로 잡을지 사용하고 TCP/IP는 실제 통신에 사용된다.
+3. TCP/IP : **Application** (OSI의 Application, Presentation, Session) | **Transport** | **Internet** (OSI의 NW) | **Network Access** 
+
 
 <br>
 
