@@ -115,6 +115,12 @@
 
 11. 비대칭키
 
+12. 웹 서버와 WAS란
+
+     웹 서버는 웹 브라우저 같은 클라이언트로부터 HTTP 요청을 받아 HTML과 같은 웹 페이지를 전송해주며 정적 문서만 처리한다. Apache Server, Nginx 등이 있다.
+
+     WAS (Web Application Server는) 동적 컨텐츠 까지 제공한다. (WAS = Web Server + Web Container)
+
 # Network
 
 #### ◼ OSI 7계층
@@ -323,7 +329,13 @@
 
    ![connection](image/connection.PNG)
 
-##### ◼ TCP 흐름제어/ 혼잡제어
+##### ◼ TCP 흐름제어
+
+​	흐름제어는 데이터를 송신하는 곳과 수신하는 곳의 데이터 처리 속도를 조절하여 수신자의 버퍼 오버플로우를 방지한다. 슬라이싱 윈도우 기법을 사용한다.
+
+##### ◼ TCP 혼잡제어
+
+​	혼잡제어는 네트워크 내의 패킷 수가 증가하지 않도록 방지한다.
 
 <br>
 
